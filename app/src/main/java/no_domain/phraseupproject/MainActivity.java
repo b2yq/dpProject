@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -15,9 +17,21 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //ustawienie czcionki na polu tesktowym
         Typeface myTypeFace = Typeface.createFromAsset(getAssets(),"Daniel_BOLD.ttf");
         TextView myTextView = (TextView)findViewById(R.id.mainTextView);
         myTextView.setTypeface(myTypeFace);
+
+        //podpiecie onClick-a na ca³ym layoucie
+        RelativeLayout mainLayout =(RelativeLayout)findViewById(R.id.mainLayout);
+        mainLayout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                TextView myTextView = (TextView)findViewById(R.id.mainTextView);
+                myTextView.setTextColor(getResources().getColor(R.color.darkBlue));
+                //startActivityForResult(new Intent(A_My_Galaxy.this,C_Student_Book_Planet.class), 0);
+            }
+        });
     }
 
 //    @Override
