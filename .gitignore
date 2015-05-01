@@ -26,10 +26,12 @@ proguard/
 *.log
 
 # Added by android studio
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
 .DS_Store
-/build
 /captures
+
+# Intellij IDEA (see https://intellij-support.jetbrains.com/entries/23393067)
+.idea/workspace.xml
+.idea/libraries
+.idea/tasks.xml
+.idea/datasources.xml
+.idea/dataSources.ids
