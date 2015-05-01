@@ -24,3 +24,12 @@ proguard/
 
 # Log Files
 *.log
+
+# Added by android studio
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
