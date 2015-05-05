@@ -1,0 +1,49 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:gravity="center_vertical|center_horizontal"
+    android:background="#85F279"
+    android:id="@+id/layoutMenu">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ale o co chodzi"
+        android:id="@+id/activity_menu_buttonMenu1"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:clickable="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nowe Wyzwanie"
+        android:id="@+id/activity_menu_buttonMenu2"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:clickable="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Twoje punkty"
+        android:id="@+id/activity_menu_buttonMenu3"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:clickable="true"
+        android:enabled="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quit"
+        android:id="@+id/activity_menu_buttonMenu4"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:clickable="true" />
+</LinearLayout>

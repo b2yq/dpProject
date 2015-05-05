@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="no_domain.phraseupproject.ChallengeActivity"
+    android:background="#B1FF9E">
+
+    <TextView android:text="EN -> PL" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:textColor="@color/menuLetters"
+        android:id="@+id/activity_challenge_textViewTop" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/activity_challenge_textViewTop">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Wrong"
+            android:id="@+id/activity_challenge_textView1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="#FFFFFF"
+            android:padding="30dp"
+            android:clickable="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Wrong"
+            android:id="@+id/activity_challenge_textView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#FFFFFF"
+            android:padding="30dp"
+            android:clickable="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Good"
+            android:id="@+id/activity_challenge_textView3"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="#FFFFFF"
+            android:padding="30dp"
+            android:clickable="true"
+            android:layout_marginBottom="70dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Wrong"
+            android:id="@+id/activity_challenge_textView4"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#FFFFFF"
+            android:padding="30dp"
+            android:clickable="true"
+            android:layout_marginBottom="70dp"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            android:id="@+id/textViewCenter"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:clickable="false"
+            android:background="#FFFFFF"
+            android:padding="30dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>
