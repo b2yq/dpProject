@@ -6,4 +6,6 @@
     <string name="title_activity_menu">MenuActivity</string>
     <string name="title_activity_info">InfoActivity</string>
     <string name="title_activity_choose">ChooseActivity</string>
+    <string name="title_activity_challenge">ChallengeActivity</string>
+    <string name="title_activity_success">SuccessActivity</string>
 </resources>

@@ -29,6 +29,14 @@
             android:name=".ChooseActivity"
             android:label="@string/title_activity_choose" >
         </activity>
+        <activity
+            android:name=".ChallengeActivity"
+            android:label="@string/title_activity_challenge" >
+        </activity>
+        <activity
+            android:name=".SuccessActivity"
+            android:label="@string/title_activity_success" >
+        </activity>
     </application>
 
 </manifest>

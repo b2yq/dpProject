@@ -24,5 +24,16 @@ public class ChooseActivity extends Activity {
                 startActivityForResult(new Intent(ChooseActivity.this, MenuActivity.class), 0);
             }
         });
+
+
+        //podpiecie sie pod przycisk "Nowe wyzwanie"
+        Button challengeButton = (Button) findViewById(R.id.activity_choose_button1);
+        challengeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //przekierowanie do MenuActivity
+                startActivityForResult(new Intent(ChooseActivity.this, ChallengeActivity.class), 0);
+            }
+        });
     }
 }

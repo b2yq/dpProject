@@ -42,7 +42,6 @@
             android:text="1. EN -> PL"
             android:id="@+id/activity_choose_button1"
             android:layout_gravity="center_horizontal"
-            android:enabled="false"
             android:layout_margin="10dp" />
 
         <Button

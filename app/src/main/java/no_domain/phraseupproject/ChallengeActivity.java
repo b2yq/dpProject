@@ -5,26 +5,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
-public class InfoActivity extends Activity {
+public class ChallengeActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info);
+        setContentView(R.layout.activity_challenge);
 
 
-        //podpiecie sie pod przycisk "Got it"
-        Button backButton = (Button) findViewById(R.id.activity_info_button_back);
+        //podpiecie sie pod przycisk TextView z poprawna odpowiedzia
+        TextView backButton = (TextView) findViewById(R.id.activity_challenge_textView3);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //przekierowanie do MenuActivity
-                startActivityForResult(new Intent(InfoActivity.this, MenuActivity.class), 0);
+                //przekierowanie do SuccessActivity
+                startActivityForResult(new Intent(ChallengeActivity.this, SuccessActivity.class), 0);
             }
         });
-
-
     }
 }
