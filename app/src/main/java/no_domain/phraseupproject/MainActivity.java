@@ -1,5 +1,6 @@
 package no_domain.phraseupproject;
 
+import android.app.Activity;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class MainActivity extends ActionBarActivity {
         TextView myTextView = (TextView)findViewById(R.id.mainTextView);
         myTextView.setTypeface(myTypeFace);
 
-        //podpiecie onClick-a na ca³ym layoucie
+        //podpiecie onClick-a na calym layoucie
         RelativeLayout mainLayout =(RelativeLayout)findViewById(R.id.mainLayout);
         mainLayout.setOnClickListener(new View.OnClickListener(){
             @Override
