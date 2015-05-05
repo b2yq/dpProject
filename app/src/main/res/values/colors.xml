@@ -2,4 +2,5 @@
 <resources>
     <color name="cyan">#33CCCC</color>
     <color name="darkBlue">#000066</color>
+    <color name="menuLetters">#FFFFFF</color>
 </resources>
