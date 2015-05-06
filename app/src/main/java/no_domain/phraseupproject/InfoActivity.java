@@ -22,10 +22,8 @@ public class InfoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //przekierowanie do MenuActivity
-                startActivityForResult(new Intent(InfoActivity.this, MenuActivity.class), 0);
             }
         });
 
-        TextView x = (TextView) findViewById(R.id.activity_info_title);
     }
 }
