@@ -36,12 +36,22 @@ public class MenuActivity extends Activity {
             }
         });
 
+        //podpiecie trzeciego przycisku w menu "Your score"
+        Button score = (Button)findViewById(R.id.activity_menu_buttonMenu3);
+        score.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //przekierowanie do YourScoreActivity
+                startActivityForResult(new Intent(MenuActivity.this, YourScoreActivity.class), 0);
+            }
+        });
+
 
         //podpiecie ostatniego przycisku "QUIT"
         Button quit=(Button)findViewById(R.id.activity_menu_buttonMenu4);
         quit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 //skopiowane z neta, w androidzie nie wylacza się apki, to system decyduje kiedy ja wyłączyć, my tylko mozemy
                 //przekierowac uzytkownika do ekranu domowego androida
                 Intent intent = new Intent(Intent.ACTION_MAIN);

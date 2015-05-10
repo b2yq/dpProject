@@ -42,6 +42,10 @@
             android:name=".FailActivity"
             android:label="@string/title_activity_fail" >
         </activity>
+        <activity
+            android:name=".YourScoreActivity"
+            android:label="@string/title_activity_your_score" >
+        </activity>
     </application>
 
 </manifest>
