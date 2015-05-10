@@ -35,8 +35,7 @@
         android:id="@+id/activity_menu_buttonMenu3"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
-        android:clickable="true"
-        android:enabled="false" />
+        android:clickable="true" />
 
     <Button
         android:layout_width="wrap_content"
