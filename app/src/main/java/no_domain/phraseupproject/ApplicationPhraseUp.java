@@ -2,21 +2,39 @@ package no_domain.phraseupproject;
 
 import android.app.Application;
 
-/**
- * Created by OOC-Paweł on 2015-05-05.
- */
+import no_domain.phraseupproject.no_domain.phraseupproject.data.DataManager;
+import no_domain.phraseupproject.no_domain.phraseupproject.data.IDataManager;
+import no_domain.phraseupproject.no_domain.phraseupproject.model.UserResult;
+
 public class ApplicationPhraseUp extends Application {
 
+    private IDataManager dataManager;
 
-    private long result = 0;
+    private UserResult result;
+
     public long getResult() {
-        return result;
+        return dataManager.getResult().getValue();
     }
     public void IncreaseResult(){
-        result++;
+        result.increaseValue();
+        dataManager.saveResult(result);
     }
     public void DecreaseResult(){
-        result--;
+        result.decreaseValue();
+        dataManager.saveResult(result);
     }
 
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        dataManager = new DataManager(this);
+        result = dataManager.getResult();
+    }
+
+    @Override
+    public void onTerminate() {
+        // not guaranteed to be called
+        super.onTerminate();
+    }
 }

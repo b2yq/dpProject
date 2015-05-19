@@ -29,4 +29,14 @@ public class YourScoreActivity extends Activity {
             }
         });
     }
+
+    //Ta metoda wykonuje sie za kazdym razem kiedy YourScoreActivity bedzie wystartowana
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        //powinnismy wtedy pobrac biezacy wynik i ustawic go na widoku
+        TextView resultValue = (TextView)findViewById(R.id.activity_your_score_textView_score);
+        resultValue.setText((String.valueOf(app.getResult())));
+    }
 }
