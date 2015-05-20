@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Random;
+
+import no_domain.phraseupproject.no_domain.phraseupproject.model.Word;
 import no_domain.phraseupproject.no_domain.phraseupproject.model.WordsChallengeGroup;
 
 
@@ -17,6 +21,13 @@ public class ChallengeActivity extends Activity {
     //Handler do obslugi porazki
     private View.OnClickListener FailOnClickHandler;
 
+    //generator liczb losowych uzywany do losowania na ktorej kontrolce bedzie poprawna odpowiedz
+    private Random randomGenerator;
+
+    //srodkowa kontrolka wyswietlajaca slowo
+    private TextView center;
+    //kontrolki do okola wyswietlajace tlumaczenia slowek
+    private ArrayList<TextView> answers;
 
 
     @Override
@@ -24,7 +35,10 @@ public class ChallengeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge);
 
+
         app = (ApplicationPhraseUp) getApplication();
+        randomGenerator = new Random();
+
 
         //inicjalizacja handlera, czyli zapisanie funkcji pod zmienna, to sie wykona dopiero po kliku
         SuccessOnClickHandler = new View.OnClickListener() {
@@ -45,6 +59,14 @@ public class ChallengeActivity extends Activity {
                 startActivityForResult(new Intent(ChallengeActivity.this, ResultActivity.class), 0);
             }
         };
+
+        center = (TextView) findViewById(R.id.activity_challenge_textViewCenter);
+
+        answers = new ArrayList<>();
+        answers.add((TextView) findViewById(R.id.activity_challenge_textView1));
+        answers.add((TextView) findViewById(R.id.activity_challenge_textView2));
+        answers.add((TextView) findViewById(R.id.activity_challenge_textView3));
+        answers.add((TextView) findViewById(R.id.activity_challenge_textView4));
     }
 
 
@@ -55,30 +77,34 @@ public class ChallengeActivity extends Activity {
         //dlatego Listener-y bedziemy podpinac pod startem, bo tu bedziemy losowac slowa i przydzielac pod kontrolki wiec
         //tez bedziemy odpowiednio podpinac pod kontrolki
 
-        //textViewCenter
-        TextView center = (TextView) findViewById(R.id.activity_challenge_textViewCenter);
-
-        //podpiecie handlera pod przycisk TextView z poprawna odpowiedzia
-        TextView properAnswer = (TextView) findViewById(R.id.activity_challenge_textView3);
-        properAnswer.setOnClickListener(SuccessOnClickHandler);
-
-        //podpiecie handlera pod pozostałem TextViews z błednymi odpowiedziami
-        TextView wrongAnswer1 = (TextView) findViewById(R.id.activity_challenge_textView1);
-        wrongAnswer1.setOnClickListener(FailOnClickHandler);
-        TextView wrongAnswer2 = (TextView) findViewById(R.id.activity_challenge_textView2);
-        wrongAnswer2.setOnClickListener(FailOnClickHandler);
-        TextView wrongAnswer3 = (TextView) findViewById(R.id.activity_challenge_textView4);
-        wrongAnswer3.setOnClickListener(FailOnClickHandler);
-
 
         //pobranie losowych slow z bazy
         WordsChallengeGroup group = app.getRandomWordsGroup();
 
+        //usupelnienie textViewCenter
         center.setText(group.getSuccessWord());
+
+        //wylosowanie numeru kontrolki pod ktora bedzie poprawna odpowiedz
+        int index = randomGenerator.nextInt(answers.size());
+
+        //uzupelnienie kontrolki o tresc i podpiecie poprawnego eventa, ktory w razie wybrania doda punkt na plus
+        TextView properAnswer = answers.get(index);
+        properAnswer.setOnClickListener(SuccessOnClickHandler);
         properAnswer.setText(group.getSuccessWordTranslation());
-        wrongAnswer1.setText(group.getFailWordsTranslations().get(0));
-        wrongAnswer2.setText(group.getFailWordsTranslations().get(1));
-        wrongAnswer3.setText(group.getFailWordsTranslations().get(2));
+
+        int j =0;
+        for(int i=0; i<answers.size(); i++) {
+            //zignoruj juz ustawiona kontrolke, w ktorej jest poprawna odpowiedz
+            if (i == index) {
+                continue;
+            }
+
+            //wez slowo z wylosowanch zlych podpowiedzi i ustaw na kontrolce
+            TextView wrongAnswer = answers.get(i);
+            wrongAnswer.setOnClickListener(FailOnClickHandler);
+            wrongAnswer.setText(group.getFailWordsTranslations().get(j));
+            j++;
+        }
     }
 
 
