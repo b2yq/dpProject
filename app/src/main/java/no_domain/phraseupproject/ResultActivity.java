@@ -20,7 +20,7 @@ public class ResultActivity extends Activity {
 
         app = (ApplicationPhraseUp)getApplication();
 
-        //podpiecie sie pod przycisk "Nowe wyzwanie"
+        //podpiecie sie pod przycisk "BAck"
         Button backButton = (Button) findViewById(R.id.activity_result_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="no_domain.phraseupproject.YourScoreActivity"
+    android:background="#ffb4b4ff"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="no_domain.phraseupproject.YourScoreActivity"
-    android:background="#ffb4b4ff"
     >
 
     <TextView
@@ -19,9 +19,9 @@
         android:textColor="@color/menuLetters"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
+        android:layout_marginTop="137dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -29,19 +29,16 @@
         android:text="BACK"
         android:id="@+id/activity_choose_button_back"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"  />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
-        android:id="@+id/Points"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/activity_your_score_textView"
-        android:layout_alignStart="@+id/activity_your_score_textView"
-        android:layout_alignRight="@+id/activity_your_score_textView"
-        android:layout_alignEnd="@+id/activity_your_score_textView" />
+        android:id="@+id/activity_your_score_textView_score"
+        android:layout_below="@+id/activity_your_score_textView"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

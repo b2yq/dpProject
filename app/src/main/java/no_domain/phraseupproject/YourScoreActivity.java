@@ -16,31 +16,27 @@ public class YourScoreActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_score);
-        app = (ApplicationPhraseUp) getApplication();
 
+        app = (ApplicationPhraseUp) getApplication();
 
         //podpiecie sie pod przycisk "Back"
         Button backButton = (Button) findViewById(R.id.activity_choose_button_back);
-        backButton.setOnClickListener(new View.OnClickListener(){
-
-
-            @Override
-            public void onClick(View v) {
+        backButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
                 //przekierowanie do MenuActivity
                 startActivityForResult(new Intent(YourScoreActivity.this, MenuActivity.class), 0);
-
             }
-
         });
-
     }
 
+    //Ta metoda wykonuje sie za kazdym razem kiedy YourScoreActivity bedzie wystartowana
     @Override
     protected void onStart() {
         super.onStart();
-        TextView Score = (TextView) findViewById(R.id.Points);
-        long R = app.getResult();
-        Score.setText(String.valueOf(R));
+
+        //powinnismy wtedy pobrac biezacy wynik i ustawic go na widoku
+        TextView resultValue = (TextView)findViewById(R.id.activity_your_score_textView_score);
+        resultValue.setText((String.valueOf(app.getResult())));
     }
 }
-
