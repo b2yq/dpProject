@@ -10,16 +10,18 @@ import android.widget.TextView;
 
 public class YourScoreActivity extends Activity {
 
+    private ApplicationPhraseUp app;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_score);
+        app = (ApplicationPhraseUp) getApplication();
+
 
         //podpiecie sie pod przycisk "Back"
         Button backButton = (Button) findViewById(R.id.activity_choose_button_back);
-        backButton.setOnClickListener(new View.OnClickListener() {
-
-
+        backButton.setOnClickListener(new View.OnClickListener(){
 
 
             @Override
@@ -27,14 +29,18 @@ public class YourScoreActivity extends Activity {
                 //przekierowanie do MenuActivity
                 startActivityForResult(new Intent(YourScoreActivity.this, MenuActivity.class), 0);
 
-
             }
-
 
         });
 
-
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        TextView Score = (TextView) findViewById(R.id.Points);
+        long R = app.getResult();
+        Score.setText(String.valueOf(R));
     }
+}
+

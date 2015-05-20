@@ -2,9 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="no_domain.phraseupproject.YourScoreActivity"
     android:background="#ffb4b4ff"
-    android:gravity="center">
+    >
 
     <TextView
         android:text="Your score is"
@@ -20,15 +24,22 @@
         android:layout_marginTop="75dp" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BACK"
         android:id="@+id/activity_choose_button_back"
-        android:layout_alignWithParentIfMissing="false"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"  />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/Points"
+        android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/activity_your_score_textView"
         android:layout_alignStart="@+id/activity_your_score_textView"
-        android:layout_marginBottom="73dp"
         android:layout_alignRight="@+id/activity_your_score_textView"
         android:layout_alignEnd="@+id/activity_your_score_textView" />
 
