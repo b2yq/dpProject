@@ -1,4 +1,4 @@
-package no_domain.phraseupproject.no_domain.phraseupproject.data;
+package no_domain.phraseupproject.no_domain.phraseupproject.data.dataTables;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
@@ -10,6 +10,7 @@ public final class UserSettingsTable {
     public static final String TABLE_NAME = "user_settings";
 
     public static class UserSettingsColumns implements BaseColumns {
+        public static final String ID = "_id";
         public static final String NAME = "name";
         public static final String VALUE_INT = "value_int";
     }

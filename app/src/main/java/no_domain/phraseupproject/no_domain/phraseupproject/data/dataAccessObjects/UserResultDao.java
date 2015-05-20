@@ -1,9 +1,10 @@
-package no_domain.phraseupproject.no_domain.phraseupproject.data;
+package no_domain.phraseupproject.no_domain.phraseupproject.data.dataAccessObjects;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
 
+import no_domain.phraseupproject.no_domain.phraseupproject.data.dataTables.UserSettingsTable;
 import no_domain.phraseupproject.no_domain.phraseupproject.model.UserResult;
 
 public class UserResultDao {

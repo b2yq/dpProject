@@ -5,6 +5,7 @@ import android.app.Application;
 import no_domain.phraseupproject.no_domain.phraseupproject.data.DataManager;
 import no_domain.phraseupproject.no_domain.phraseupproject.data.IDataManager;
 import no_domain.phraseupproject.no_domain.phraseupproject.model.UserResult;
+import no_domain.phraseupproject.no_domain.phraseupproject.model.WordsChallengeGroup;
 
 public class ApplicationPhraseUp extends Application {
 
@@ -22,6 +23,11 @@ public class ApplicationPhraseUp extends Application {
     public void DecreaseResult(){
         result.decreaseValue();
         dataManager.saveResult(result);
+    }
+
+
+    public WordsChallengeGroup getRandomWordsGroup(){
+        return dataManager.getRandomWordsChallengeGroup();
     }
 
 

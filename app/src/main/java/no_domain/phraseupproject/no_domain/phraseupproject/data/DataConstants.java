@@ -11,7 +11,9 @@ public class DataConstants {
 
     public static final String DATABASE_NAME = "PhraseUpDataBase.db";
     public static final String DATABASE_PATH =
-            Environment.getDataDirectory() + "/data/" + DataConstants.APP_PACKAGE_NAME + "/databases/" + DataConstants.DATABASE_NAME;
+            Environment.getDataDirectory() +
+            "/data/" + DataConstants.APP_PACKAGE_NAME +
+            "/databases/" + DataConstants.DATABASE_NAME;
 
     private DataConstants() {
     }

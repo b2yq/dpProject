@@ -12,4 +12,8 @@ public class ModelBase {
         this.id = id;
     }
 
+    public ModelBase(long id){
+        this.id = id;
+    }
+
 }

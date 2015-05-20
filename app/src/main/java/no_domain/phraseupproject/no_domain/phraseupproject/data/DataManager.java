@@ -6,7 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.SystemClock;
 import android.util.Log;
 
+import no_domain.phraseupproject.no_domain.phraseupproject.data.dataAccessObjects.UserResultDao;
+import no_domain.phraseupproject.no_domain.phraseupproject.data.dataAccessObjects.WordsChallengeGroupDao;
 import no_domain.phraseupproject.no_domain.phraseupproject.model.UserResult;
+import no_domain.phraseupproject.no_domain.phraseupproject.model.WordsChallengeGroup;
 
 
 public class DataManager implements IDataManager{
@@ -15,6 +18,7 @@ public class DataManager implements IDataManager{
     private SQLiteDatabase db;
 
     UserResultDao resultDao;
+    WordsChallengeGroupDao wordsGroupDao;
 
     public DataManager(Context context)
     {
@@ -25,6 +29,7 @@ public class DataManager implements IDataManager{
         Log.i(DataConstants.LOG_TAG, "DataManagerImpl created, db open status: " + db.isOpen());
 
         resultDao = new UserResultDao(db);
+        wordsGroupDao = new WordsChallengeGroupDao(db);
     }
 
     public SQLiteDatabase getDb() {
@@ -37,6 +42,7 @@ public class DataManager implements IDataManager{
             // since we pass db into DAO, have to recreate DAO if db is re-opened
 
             resultDao = new UserResultDao(db);
+            wordsGroupDao = new WordsChallengeGroupDao(db);
         }
     }
 
@@ -68,5 +74,10 @@ public class DataManager implements IDataManager{
     public void saveResult(UserResult entity)
     {
         resultDao.update(entity);
+    }
+
+    public WordsChallengeGroup getRandomWordsChallengeGroup()
+    {
+        return wordsGroupDao.selectRandomWordsChallengeGroup();
     }
 }

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import no_domain.phraseupproject.no_domain.phraseupproject.model.WordsChallengeGroup;
+
 
 public class ChallengeActivity extends Activity {
 
@@ -53,6 +55,8 @@ public class ChallengeActivity extends Activity {
         //dlatego Listener-y bedziemy podpinac pod startem, bo tu bedziemy losowac slowa i przydzielac pod kontrolki wiec
         //tez bedziemy odpowiednio podpinac pod kontrolki
 
+        //textViewCenter
+        TextView center = (TextView) findViewById(R.id.activity_challenge_textViewCenter);
 
         //podpiecie handlera pod przycisk TextView z poprawna odpowiedzia
         TextView properAnswer = (TextView) findViewById(R.id.activity_challenge_textView3);
@@ -65,6 +69,16 @@ public class ChallengeActivity extends Activity {
         wrongAnswer2.setOnClickListener(FailOnClickHandler);
         TextView wrongAnswer3 = (TextView) findViewById(R.id.activity_challenge_textView4);
         wrongAnswer3.setOnClickListener(FailOnClickHandler);
+
+
+        //pobranie losowych slow z bazy
+        WordsChallengeGroup group = app.getRandomWordsGroup();
+
+        center.setText(group.getSuccessWord());
+        properAnswer.setText(group.getSuccessWordTranslation());
+        wrongAnswer1.setText(group.getFailWordsTranslations().get(0));
+        wrongAnswer2.setText(group.getFailWordsTranslations().get(1));
+        wrongAnswer3.setText(group.getFailWordsTranslations().get(2));
     }
 
 
