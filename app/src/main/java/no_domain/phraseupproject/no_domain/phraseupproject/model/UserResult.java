@@ -3,6 +3,7 @@ package no_domain.phraseupproject.no_domain.phraseupproject.model;
 
 public class UserResult {
 
+    //User result value
     private long value;
 
     //-------Constructors----------
@@ -13,13 +14,16 @@ public class UserResult {
 
 
     //----- Setters and Getters
-    public long getValue() {
+    public long getValue()
+    {
         return value;
     }
-    public void increaseValue(){
+    public void increaseValue()
+    {
         value++;
     }
-    public void decreaseValue(){
+    public void decreaseValue()
+    {
         value--;
     }
 

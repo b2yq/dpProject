@@ -26,15 +26,21 @@ public class WordsChallengeGroup {
         langSuccess = lang;
     }
 
-    public String getSuccessWord(){
+
+    public String getSuccessWord()
+    {
         return successWord.getValue(langSuccess);
     }
 
-    public String getSuccessWordTranslation(){
+
+    public String getSuccessWordTranslation()
+    {
         return successWord.getValue(langSuccess.getOtherLanguage());
     }
 
-    public List<String> getFailWordsTranslations(){
+
+    public List<String> getFailWordsTranslations()
+    {
         List<String> values = new ArrayList<String>();
 
         for(Word w : failWords){

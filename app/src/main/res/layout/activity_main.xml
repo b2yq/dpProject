@@ -11,21 +11,15 @@
     android:clickable="true"
     android:id="@+id/activity_main_mainLayout">
 
-
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Phrase UP !!!"
+        android:text="Phrase UP!"
         android:id="@+id/activity_main_mainTextView"
         android:textColor="@color/menuLetters"
         android:textSize="20pt"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
-
-
-
 
 </RelativeLayout>

@@ -21,7 +21,7 @@ public class WordsChallengeGroupDao {
     // JOIN category
     // ORDER BY RANDOM() LIMIT 1
     //
-    private static final String GET_RANDOM_WORD =
+    private static final String GET_RANDOM_WORD_QUERY_BASE =
                     "SELECT " +
                     WordsTable.TABLE_NAME + "." + WordsTable.WordsTableColumns._ID + ", " +
                     WordsTable.TABLE_NAME + "." + WordsTable.WordsTableColumns.EN + ", " +
@@ -39,7 +39,7 @@ public class WordsChallengeGroupDao {
     // WHERE words._id != ? AND category.name = '?'
     // ORDER BY RANDOM() LIMIT 3
     //
-    private static final String GET_RANDOM_GROUP_WORDS = "SELECT "+
+    private static final String GET_RANDOM_GROUP_WORDS_QUERY_BASE = "SELECT "+
             WordsTable.TABLE_NAME + "." + WordsTable.WordsTableColumns._ID + ", " +
             WordsTable.TABLE_NAME + "." + WordsTable.WordsTableColumns.EN + ", " +
             WordsTable.TABLE_NAME + "." + WordsTable.WordsTableColumns.PL + ", " +
@@ -63,12 +63,12 @@ public class WordsChallengeGroupDao {
     public WordsChallengeGroup selectRandomWordsChallengeGroup()
     {
         //wczytywanie losowego slowa "success"
-        Cursor cursor1 = db.rawQuery(GET_RANDOM_WORD, null);
+        Cursor cursor1 = db.rawQuery(GET_RANDOM_WORD_QUERY_BASE, null);
 
         Word successWord;
         if (cursor1.moveToFirst())
         {
-            successWord = ReadWord(cursor1);
+            successWord = readWord(cursor1);
         }
         else
         {
@@ -78,7 +78,7 @@ public class WordsChallengeGroupDao {
 
         //wczytywanie losowych slow z gropy slowa "success"
         Cursor cursor2 = db.rawQuery(
-                GET_RANDOM_GROUP_WORDS,
+                GET_RANDOM_GROUP_WORDS_QUERY_BASE,
                 new String[]{
                         String.valueOf(successWord.getId()),
                         successWord.getCategory()
@@ -87,13 +87,13 @@ public class WordsChallengeGroupDao {
         List<Word> list = new ArrayList<Word>();
         while (cursor2.moveToNext())
         {
-            list.add(ReadWord(cursor2));
+            list.add(readWord(cursor2));
         }
 
         return new WordsChallengeGroup(Language.English, successWord, list);
     }
 
-    private Word ReadWord(Cursor cursor)
+    private Word readWord(Cursor cursor)
     {
         long id = cursor.getLong(cursor.getColumnIndex(WordsTable.WordsTableColumns.ID));
         String en = cursor.getString( cursor.getColumnIndex(WordsTable.WordsTableColumns.EN) );

@@ -11,7 +11,7 @@
     >
 
     <TextView
-        android:text="Your score is"
+        android:text="Twój obecny wynik to:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/activity_your_score_textView"
@@ -19,14 +19,14 @@
         android:textColor="@color/menuLetters"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
-        android:layout_marginTop="137dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BACK"
+        android:text="Powrót"
         android:id="@+id/activity_choose_button_back"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
@@ -35,9 +35,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="0"
         android:id="@+id/activity_your_score_textView_score"
-        android:layout_below="@+id/activity_your_score_textView"
+        android:textSize="100dp"
+        android:textColor="@color/menuLetters"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
 

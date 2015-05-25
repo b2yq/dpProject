@@ -16,11 +16,11 @@ public class ApplicationPhraseUp extends Application {
     public long getResult() {
         return dataManager.getResult().getValue();
     }
-    public void IncreaseResult(){
+    public void increaseResult(){
         result.increaseValue();
         dataManager.saveResult(result);
     }
-    public void DecreaseResult(){
+    public void decreaseResult(){
         result.decreaseValue();
         dataManager.saveResult(result);
     }

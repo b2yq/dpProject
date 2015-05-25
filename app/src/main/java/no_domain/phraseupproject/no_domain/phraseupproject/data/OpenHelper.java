@@ -16,8 +16,6 @@ public class OpenHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
     private final Context context;
-    private SQLiteDatabase myDataBase;
-
 
 
     OpenHelper(final Context context) {
@@ -93,16 +91,6 @@ public class OpenHelper extends SQLiteOpenHelper {
         Log.i(DataConstants.LOG_TAG, "SQLiteOpenHelper onUpgrade - oldVersion:" + oldVersion + " newVersion:" + newVersion);
 
         //UserSettingsTable.onUpgrade(db, oldVersion, newVersion);
-    }
-
-    @Override
-    public synchronized void close() {
-
-        if(myDataBase != null)
-            myDataBase.close();
-
-        super.close();
-
     }
 
     /**

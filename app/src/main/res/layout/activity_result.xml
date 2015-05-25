@@ -7,39 +7,74 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="#3DFFCF"
-    tools:context="no_domain.phraseupproject.SuccessActivity">
+    android:background="@color/successBackground"
+    tools:context="no_domain.phraseupproject.SuccessActivity"
+    android:id="@+id/activity_result_layout">
 
-    <TextView
-        android:text="Gratulacje\n Twój wynik to:"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:textColor="@color/menuLetters"
         android:layout_alignParentTop="true"
+        android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
-        android:id="@+id/activity_result_TitleTextView" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp">
 
-    <Button
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Large Text\nTest\nTest testowy"
+            android:id="@+id/activity_result_TitleTextView1"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/menuLettersSize"
+            android:textColor="@color/menuLetters"
+            android:gravity="center" />
+
+        <TextView
+            android:text="Twój obecny wynik to:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/menuLettersSize"
+            android:textColor="@color/menuLetters"
+            android:id="@+id/activity_result_TitleTextView2"
+            android:layout_above="@+id/activity_result_ResultValueTextView"
+            android:layout_centerHorizontal="true"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="0"
+            android:id="@+id/activity_result_ResultValueTextView"
+            android:textAlignment="center"
+            android:singleLine="true"
+            android:textColor="@color/menuLetters"
+            android:textSize="100dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
-        android:id="@+id/activity_result_button"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Test"
-        android:id="@+id/activity_success_ResultValueTextView"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/activity_result_TitleTextView"
         android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:singleLine="false"
-        android:lines="2" />
+        android:id="@+id/linearLayout">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Powrót"
+            android:id="@+id/activity_result_button_back" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spróbuj jeszcze raz"
+            android:id="@+id/activity_result_button_once_again"/>
+    </LinearLayout>
 
 </RelativeLayout>

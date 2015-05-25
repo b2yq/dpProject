@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="30dp"
+        android:textSize="@dimen/menuLettersSize"
         android:textColor="@color/menuLetters"
         android:id="@+id/activity_challenge_textViewTop" />
 

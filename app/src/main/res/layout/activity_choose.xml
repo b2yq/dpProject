@@ -13,7 +13,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="back"
+        android:text="Powrót"
         android:id="@+id/activity_choose_button_back"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
@@ -26,11 +26,11 @@
         android:layout_above="@+id/activity_choose_button_back"
         android:gravity="center">
 
-        <TextView android:text="Choose Your Challenge"
+        <TextView android:text="Nowe zadanie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/activity_choose_textView"
-            android:textSize="30dp"
+            android:textSize="@dimen/menuLettersSize"
             android:textColor="@color/menuLetters"
             android:layout_gravity="center_horizontal"
             android:layout_margin="20dp"

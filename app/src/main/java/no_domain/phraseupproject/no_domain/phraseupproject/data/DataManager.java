@@ -17,8 +17,8 @@ public class DataManager implements IDataManager{
     private Context context;
     private SQLiteDatabase db;
 
-    UserResultDao resultDao;
-    WordsChallengeGroupDao wordsGroupDao;
+    private UserResultDao resultDao;
+    private WordsChallengeGroupDao wordsGroupDao;
 
     public DataManager(Context context)
     {
@@ -32,9 +32,9 @@ public class DataManager implements IDataManager{
         wordsGroupDao = new WordsChallengeGroupDao(db);
     }
 
-    public SQLiteDatabase getDb() {
-        return db;
-    }
+    //public SQLiteDatabase getDb() {
+    //    return db;
+    //}
 
     private void openDb() {
         if (!db.isOpen()) {

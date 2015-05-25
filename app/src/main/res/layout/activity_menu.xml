@@ -13,7 +13,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ale o co chodzi"
+        android:text="O co chodzi?"
         android:id="@+id/activity_menu_buttonMenu1"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
@@ -40,7 +40,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quit"
+        android:text="Wyjdź"
         android:id="@+id/activity_menu_buttonMenu4"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"

@@ -3,4 +3,6 @@
     <color name="cyan">#33CCCC</color>
     <color name="darkBlue">#000066</color>
     <color name="menuLetters">#FFFFFF</color>
+    <color name="successBackground">#3DFFCF</color>
+    <color name="failBackground">#FF4B4A</color>
 </resources>
