@@ -17,7 +17,9 @@
         android:id="@+id/activity_menu_buttonMenu1"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
-        android:clickable="true" />
+        android:clickable="true"
+        android:textColor="@color/buttonLetters"
+        android:textSize="@dimen/buttonLettersSize"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -26,7 +28,9 @@
         android:id="@+id/activity_menu_buttonMenu2"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
-        android:clickable="true" />
+        android:clickable="true"
+        android:textColor="@color/buttonLetters"
+        android:textSize="@dimen/buttonLettersSize"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -35,7 +39,9 @@
         android:id="@+id/activity_menu_buttonMenu3"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
-        android:clickable="true" />
+        android:clickable="true"
+        android:textColor="@color/buttonLetters"
+        android:textSize="@dimen/buttonLettersSize"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -44,5 +50,8 @@
         android:id="@+id/activity_menu_buttonMenu4"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
-        android:clickable="true" />
+        android:clickable="true"
+        android:textColor="@color/buttonLetters"
+        android:textSize="@dimen/buttonLettersSize"/>
+
 </LinearLayout>

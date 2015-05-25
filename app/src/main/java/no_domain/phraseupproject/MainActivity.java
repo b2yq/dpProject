@@ -16,9 +16,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //ustawienie czcionki na polu tesktowym
-        Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "Daniel_BOLD.ttf");
         TextView myTextView = (TextView) findViewById(R.id.activity_main_mainTextView);
-        myTextView.setTypeface(myTypeFace);
+        myTextView.setTypeface( ((ApplicationPhraseUp)getApplication()).getFont(0) );
 
         //podpiecie onClick-a na calym layoucie
         RelativeLayout mainLayout = (RelativeLayout) findViewById(R.id.activity_main_mainLayout);

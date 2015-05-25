@@ -17,10 +17,18 @@ public class YourScoreActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_score);
 
+
         app = (ApplicationPhraseUp) getApplication();
+        TextView title = (TextView) findViewById(R.id.activity_your_score_textView);
+        title.setTypeface(app.getFont(0));
+
+        TextView score = (TextView) findViewById(R.id.activity_your_score_textView_score);
+        score.setTypeface(app.getFont(0));
+
 
         //podpiecie sie pod przycisk "Back"
         Button backButton = (Button) findViewById(R.id.activity_choose_button_back);
+        backButton.setTypeface(app.getFont(0));
         backButton.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {

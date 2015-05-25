@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MenuActivity extends Activity {
@@ -14,9 +15,11 @@ public class MenuActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        ApplicationPhraseUp app = (ApplicationPhraseUp)getApplication();
 
         //podpiecie pierwszego przzycisku w menu "Ale o co chodzi"
-        Button info=(Button)findViewById(R.id.activity_menu_buttonMenu1);
+        TextView info = (TextView)findViewById(R.id.activity_menu_buttonMenu1);
+        info.setTypeface(app.getFont(0));
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,7 +30,8 @@ public class MenuActivity extends Activity {
 
 
         //podpiecie drugiego przycisku w menu "Nowe wyzwanie"
-        Button choose=(Button)findViewById(R.id.activity_menu_buttonMenu2);
+        TextView choose = (TextView)findViewById(R.id.activity_menu_buttonMenu2);
+        choose.setTypeface(app.getFont(0));
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,8 +40,10 @@ public class MenuActivity extends Activity {
             }
         });
 
+
         //podpiecie trzeciego przycisku w menu "Your score"
-        Button score = (Button)findViewById(R.id.activity_menu_buttonMenu3);
+        TextView score = (TextView)findViewById(R.id.activity_menu_buttonMenu3);
+        score.setTypeface(app.getFont(0));
         score.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +54,8 @@ public class MenuActivity extends Activity {
 
 
         //podpiecie ostatniego przycisku "QUIT"
-        Button quit=(Button)findViewById(R.id.activity_menu_buttonMenu4);
+        TextView quit = (TextView)findViewById(R.id.activity_menu_buttonMenu4);
+        quit.setTypeface(app.getFont(0));
         quit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

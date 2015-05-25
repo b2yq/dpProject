@@ -34,13 +34,22 @@ public class ChallengeActivity extends Activity {
         app = (ApplicationPhraseUp) getApplication();
         randomGenerator = new Random();
 
+        TextView title = (TextView) findViewById(R.id.activity_challenge_textViewTop);
+        title.setTypeface(app.getFont(0));
+
         center = (TextView) findViewById(R.id.activity_challenge_textViewCenter);
+        center.setTypeface(app.getFont(0));
 
         answers = new ArrayList<>();
         answers.add((TextView) findViewById(R.id.activity_challenge_textView1));
         answers.add((TextView) findViewById(R.id.activity_challenge_textView2));
         answers.add((TextView) findViewById(R.id.activity_challenge_textView3));
         answers.add((TextView) findViewById(R.id.activity_challenge_textView4));
+
+        for(TextView text : answers)
+        {
+            text.setTypeface(app.getFont(0));
+        }
     }
 
 

@@ -29,15 +29,15 @@
             android:id="@+id/activity_result_TitleTextView1"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:textSize="@dimen/menuLettersSize"
+            android:textSize="30dp"
             android:textColor="@color/menuLetters"
             android:gravity="center" />
 
         <TextView
-            android:text="Twój obecny wynik to:"
+            android:text="Twój obecny wynik:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/menuLettersSize"
+            android:textSize="30dp"
             android:textColor="@color/menuLetters"
             android:id="@+id/activity_result_TitleTextView2"
             android:layout_above="@+id/activity_result_ResultValueTextView"
@@ -53,7 +53,7 @@
             android:textAlignment="center"
             android:singleLine="true"
             android:textColor="@color/menuLetters"
-            android:textSize="100dp"
+            android:textSize="70dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
 
@@ -66,15 +66,19 @@
         android:id="@+id/linearLayout">
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Powrót"
-            android:id="@+id/activity_result_button_back" />
+            android:id="@+id/activity_result_button_back"
+            android:textColor="@color/buttonLetters"
+            android:textSize="@dimen/bottomButtonLettersSize"/>
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Spróbuj jeszcze raz"
-            android:id="@+id/activity_result_button_once_again"/>
+            android:id="@+id/activity_result_button_once_again"
+            android:textColor="@color/buttonLetters"
+            android:textSize="@dimen/bottomButtonLettersSize"/>
     </LinearLayout>
 
 </RelativeLayout>

@@ -16,7 +16,9 @@
         android:text="Powrót"
         android:id="@+id/activity_choose_button_back"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/buttonLetters"
+        android:textSize="@dimen/bottomButtonLettersSize"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -42,7 +44,9 @@
             android:text="1. EN -> PL"
             android:id="@+id/activity_choose_button1"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            android:textColor="@color/buttonLetters"
+            android:textSize="@dimen/buttonLettersSize"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -51,7 +55,9 @@
             android:id="@+id/activity_choose_button2"
             android:layout_gravity="center_horizontal"
             android:enabled="false"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:textColor="@color/buttonLetters"
+            android:textSize="@dimen/buttonLettersSize"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -60,7 +66,9 @@
             android:id="@+id/activity_choose_button3"
             android:layout_gravity="center_horizontal"
             android:enabled="false"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:textColor="@color/buttonLetters"
+            android:textSize="@dimen/buttonLettersSize"/>
 
 
 

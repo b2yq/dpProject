@@ -21,8 +21,16 @@ public class ResultActivity extends Activity {
 
         app = (ApplicationPhraseUp)getApplication();
 
+        TextView textView1 = (TextView) findViewById(R.id.activity_result_TitleTextView1);
+        textView1.setTypeface(app.getFont(0));
+        TextView textView2 = (TextView) findViewById(R.id.activity_result_TitleTextView2);
+        textView2.setTypeface(app.getFont(0));
+        TextView textView3 = (TextView) findViewById(R.id.activity_result_ResultValueTextView);
+        textView3.setTypeface(app.getFont(0));
+
         //podpiecie sie pod przycisk "Powrot"
         Button backButton = (Button) findViewById(R.id.activity_result_button_back);
+        backButton.setTypeface(app.getFont(0));
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +41,7 @@ public class ResultActivity extends Activity {
 
         //podpiecie sie pod przycisk "Sprobuj jeszcze raz"
         Button onceAgainButton = (Button) findViewById(R.id.activity_result_button_once_again);
+        onceAgainButton.setTypeface(app.getFont(0));
         onceAgainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,11 +74,13 @@ public class ResultActivity extends Activity {
         {
             title.setText("Gratulacje! Wybrałeś poprawną odpowiedź.");
             layout.setBackgroundColor(getResources().getColor(R.color.successBackground));
+            app.increaseResult();
         }
         else
         {
             title.setText(String.format("Niestety wybrałeś złą odpowiedź. Poprawna odpowiedź to:\n'%s'",successWord));
             layout.setBackgroundColor(getResources().getColor(R.color.failBackground));
+            app.decreaseResult();
         }
 
         //powinnismy pobrac biezacy wynik i ustawic go na widoku

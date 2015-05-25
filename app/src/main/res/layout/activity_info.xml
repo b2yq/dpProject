@@ -27,7 +27,9 @@
         android:id="@+id/activity_info_button_back"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center_vertical|right"/>
+        android:layout_gravity="center_vertical|right"
+        android:textColor="@color/buttonLetters"
+        android:textSize="@dimen/bottomButtonLettersSize"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -46,7 +48,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Jest to aplikacja, która pozwoli Ci powtórzyć angielskie 'phrasal verbs' przed egzaminem gimnazjalnym - bez nerwów i pośpiechu, kiedykolwiek i gdziekolwiek zechcesz."
-            android:id="@+id/textView1"
+            android:id="@+id/activity_info_info_text"
             android:padding="5dp"
             android:textColor="@color/menuLetters"
             android:singleLine="false"
@@ -55,75 +57,63 @@
             android:layout_marginBottom="20dp" />
 
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="1. EN -> PL"
-            android:id="@+id/textView2"
-            android:padding="5dp"
-            android:textColor="@color/menuLetters"
-            android:gravity="left|center" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text=" - twoim zadaniem jest wybranie właściwego tłumaczenia wylosowanego angielskiego zwrotu"
-                android:id="@+id/textView21"
-                android:padding="5dp"
-                android:textColor="@color/menuLetters"
-                android:gravity="left|center" />
-        </LinearLayout>
+            android:stretchColumns="1"
+            android:shrinkColumns="1">
+            <TableRow android:padding="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="1. EN -> PL"
+                    android:id="@+id/textView2"
+                    android:textColor="@color/menuLetters"
+                    android:gravity="left|center" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="- twoim zadaniem jest wybranie właściwego tłumaczenia wylosowanego angielskiego zwrotu"
+                    android:id="@+id/textView21"
+                    android:textColor="@color/menuLetters"
+                    android:gravity="left" />
+            </TableRow>
+            <TableRow android:padding="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="2. PL -> EN"
+                    android:id="@+id/textView3"
+                    android:textColor="@color/menuLetters"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="- (niedostępne w tej wersji)"
+                    android:id="@+id/textView31"
+                    android:textColor="@color/menuLetters"
+                    />
+            </TableRow>
+            <TableRow android:padding="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="3. Motywator "
+                    android:id="@+id/textView4"
+                    android:textColor="@color/menuLetters"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="2. PL -> EN"
-            android:id="@+id/textView3"
-            android:textColor="@color/menuLetters"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text=" - (niedostępne w tej wersji)"
-            android:id="@+id/textView31"
-            android:padding="5dp"
-            android:textColor="@color/menuLetters"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="- cytaty motywujące (niedostępne w tej wersji)"
+                    android:id="@+id/textView41"
+                    android:textColor="@color/menuLetters"/>
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="3. Motywator"
-            android:id="@+id/textView4"
-            android:padding="5dp"
-            android:textColor="@color/menuLetters"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text=" - cytaty motywujące (niedostępne w tej wersji)"
-                android:id="@+id/textView41"
-                android:padding="5dp"
-                android:textColor="@color/menuLetters"/>
-        </LinearLayout>
-    </LinearLayout>
-
-
 </RelativeLayout>
