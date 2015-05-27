@@ -73,10 +73,10 @@ public class ChallengeActivity extends Activity {
         //uzupelnienie kontrolki o tresc i podpiecie poprawnego eventa, ktory w razie wybrania doda punkt na plus i przekieruje do ResultActivity
         TextView properAnswer = answers.get(index);
         properAnswer.setText(group.getSuccessWordTranslation());
-        ChallengeOnClickListener onSuccess = new ChallengeOnClickListener(this, true, group.getSuccessWord());
+        ChallengeOnClickListener onSuccess = new ChallengeOnClickListener(this, true, group.getSuccessWordTranslation());
         properAnswer.setOnClickListener(onSuccess);//SuccessOnClickHandler);
 
-        ChallengeOnClickListener onFail = new ChallengeOnClickListener(this, false, group.getSuccessWord());
+        ChallengeOnClickListener onFail = new ChallengeOnClickListener(this, false, group.getSuccessWordTranslation());
 
         int j =0;
         for(int i=0; i<answers.size(); i++) {

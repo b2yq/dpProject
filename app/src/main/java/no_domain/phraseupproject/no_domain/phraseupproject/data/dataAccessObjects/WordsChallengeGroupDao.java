@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import no_domain.phraseupproject.no_domain.phraseupproject.data.dataTables.CategoryTable;
+import no_domain.phraseupproject.no_domain.phraseupproject.data.dataTables.WordsCategoryTable;
 import no_domain.phraseupproject.no_domain.phraseupproject.data.dataTables.WordsTable;
 import no_domain.phraseupproject.no_domain.phraseupproject.model.Language;
 import no_domain.phraseupproject.no_domain.phraseupproject.model.Word;
@@ -16,10 +17,11 @@ import no_domain.phraseupproject.no_domain.phraseupproject.model.WordsChallengeG
 public class WordsChallengeGroupDao {
 
     //
-    // SELECT words._id, words.en, words.pl, category.name
-    // FROM words
-    // JOIN category
-    // ORDER BY RANDOM() LIMIT 1
+//    SELECT words._id, words.en, words.pl, category.name
+//    FROM words
+//    JOIN words_category ON words._id=words_category.word_id
+//    JOIN category ON words_category.category_id = category._id
+//    ORDER BY RANDOM() LIMIT 1
     //
     private static final String GET_RANDOM_WORD_QUERY_BASE =
                     "SELECT " +
@@ -28,16 +30,22 @@ public class WordsChallengeGroupDao {
                     WordsTable.TABLE_NAME + "." + WordsTable.WordsTableColumns.PL + ", " +
                     CategoryTable.TABLE_NAME + "." + CategoryTable.CategoryTableColumns.NAME + " "+
                     "FROM " + WordsTable.TABLE_NAME + " "+
+                    "JOIN "+ WordsCategoryTable.TABLE_NAME + " "+
+                    "ON "+ WordsTable.TABLE_NAME + "." + WordsTable.WordsTableColumns._ID + "="+
+                           WordsCategoryTable.TABLE_NAME + "." + WordsCategoryTable.WordsCategoryTableColumns.WORD_ID + " "+
                     "JOIN " + CategoryTable.TABLE_NAME+ " "+
+                    "ON "+ WordsCategoryTable.TABLE_NAME + "." + WordsCategoryTable.WordsCategoryTableColumns.CATEGORY_ID + "="+
+                           CategoryTable.TABLE_NAME + "." + CategoryTable.CategoryTableColumns.ID + " "+
                     "ORDER BY RANDOM() LIMIT 1";
 
 
     //
-    // SELECT words._id,  words.en,  words.pl, category.name
-    // FROM words
-    // JOIN category
-    // WHERE words._id != ? AND category.name = '?'
-    // ORDER BY RANDOM() LIMIT 3
+//    SELECT words._id, words.en, words.pl, category.name
+//    FROM words
+//    JOIN words_category ON words._id=words_category.word_id
+//    JOIN category ON words_category.category_id = category._id
+//    WHERE words._id != ? AND category.name = '?'
+//    ORDER BY RANDOM() LIMIT 3
     //
     private static final String GET_RANDOM_GROUP_WORDS_QUERY_BASE = "SELECT "+
             WordsTable.TABLE_NAME + "." + WordsTable.WordsTableColumns._ID + ", " +
@@ -45,7 +53,12 @@ public class WordsChallengeGroupDao {
             WordsTable.TABLE_NAME + "." + WordsTable.WordsTableColumns.PL + ", " +
             CategoryTable.TABLE_NAME + "." + CategoryTable.CategoryTableColumns.NAME + " "+
             "FROM " + WordsTable.TABLE_NAME + " "+
-            "JOIN " + CategoryTable.TABLE_NAME + " "+
+            "JOIN "+ WordsCategoryTable.TABLE_NAME + " "+
+            "ON "+ WordsTable.TABLE_NAME + "." + WordsTable.WordsTableColumns._ID + "="+
+            WordsCategoryTable.TABLE_NAME + "." + WordsCategoryTable.WordsCategoryTableColumns.WORD_ID + " "+
+            "JOIN " + CategoryTable.TABLE_NAME+ " "+
+            "ON "+ WordsCategoryTable.TABLE_NAME + "." + WordsCategoryTable.WordsCategoryTableColumns.CATEGORY_ID + "="+
+            CategoryTable.TABLE_NAME + "." + CategoryTable.CategoryTableColumns.ID + " "+
             "WHERE "+ WordsTable.TABLE_NAME + "." + WordsTable.WordsTableColumns._ID + "!=? "+
             "AND "+ CategoryTable.TABLE_NAME + "." + CategoryTable.CategoryTableColumns.NAME + "=? "+
             "ORDER BY RANDOM() LIMIT 3";

@@ -14,7 +14,7 @@ import java.io.OutputStream;
 
 public class OpenHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 5;
     private final Context context;
 
 
@@ -32,23 +32,20 @@ public class OpenHelper extends SQLiteOpenHelper {
 
         boolean dbExist = checkDataBase();
 
-        if (dbExist) {
+        if (dbExist)
+        {
             //do nothing - database already exist
-            //this.getReadableDatabase();
-        } else {
-
+        }
+        else {
             //By calling this method and empty database will be created into the default system path
             //of your application so we are gonna be able to overwrite that database with our database.
             this.getReadableDatabase();
-        }
-        try {
 
-            copyDataBase();
-
-        } catch (IOException e) {
-
-            throw new Error("Error copying database");
-
+            try {
+                copyDataBase();
+            } catch (IOException e) {
+                throw new Error("Error copying database");
+            }
         }
 
 
@@ -90,6 +87,14 @@ public class OpenHelper extends SQLiteOpenHelper {
 
         Log.i(DataConstants.LOG_TAG, "SQLiteOpenHelper onUpgrade - oldVersion:" + oldVersion + " newVersion:" + newVersion);
 
+        try
+        {
+            copyDataBase();
+        }
+        catch (IOException e)
+        {
+            throw new Error("Error copying database");
+        }
         //UserSettingsTable.onUpgrade(db, oldVersion, newVersion);
     }
 
@@ -101,14 +106,15 @@ public class OpenHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase checkDB = null;
 
-        try{
+        try
+        {
             String myPath = DataConstants.DATABASE_PATH;
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
-        }catch(SQLiteException e){
-
+        }
+        catch(SQLiteException e)
+        {
             //database does't exist yet.
-
         }
 
         if(checkDB != null){
